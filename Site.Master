@@ -1,0 +1,113 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="HAIR_TRAIT.SiteMaster" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>HAIR_TRAIT</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+        }
+
+        .navbar {
+            background: #222;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-left a,
+        .nav-right a,
+        .nav-right .asp-linkbutton {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-left a:hover,
+        .nav-right a:hover,
+        .nav-right .asp-linkbutton:hover {
+            text-decoration: underline;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            padding: 25px;
+            background: white;
+            margin: 20px;
+            border-radius: 6px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+
+<body>
+    <form runat="server">
+
+        
+        <div class="navbar">
+
+            <div class="nav-left">
+                <asp:HyperLink ID="hlHome" runat="server" NavigateUrl="~/Home.aspx">Home</asp:HyperLink>
+                <asp:HyperLink ID="hlProducts" runat="server" NavigateUrl="~/Services.aspx">Products</asp:HyperLink>
+                <asp:HyperLink ID="hlCart" runat="server" NavigateUrl="~/Cart.aspx">Cart</asp:HyperLink>
+
+                <asp:LinkButton
+                    ID="lnkAdmin"
+                    runat="server"
+                    PostBackUrl="~/Admin/ManageServices.aspx"
+                    Style="margin-left:15px;">
+                    Admin
+                </asp:LinkButton>
+            </div>
+
+            <div class="nav-right">
+                <asp:Label ID="lblUser" runat="server" Style="margin-right:15px;" />
+
+                <asp:LinkButton
+                    ID="lnkLogin"
+                    runat="server"
+                    PostBackUrl="~/Login.aspx"
+                    CssClass="asp-linkbutton"
+                    Style="margin-right:10px;">
+                    Login
+                </asp:LinkButton>
+
+                <asp:LinkButton
+                    ID="lnkSignup"
+                    runat="server"
+                    PostBackUrl="~/Register.aspx"
+                    CssClass="asp-linkbutton"
+                    Style="margin-right:10px;">
+                    Sign Up
+                </asp:LinkButton>
+
+                <asp:LinkButton
+                    ID="lnkLogout"
+                    runat="server"
+                    OnClick="lnkLogout_Click"
+                    CssClass="asp-linkbutton">
+                    Logout
+                </asp:LinkButton>
+            </div>
+
+        </div>
+
+    
+        <div class="container">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+
+    </form>
+</body>
+</html>
