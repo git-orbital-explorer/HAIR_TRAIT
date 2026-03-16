@@ -52,62 +52,90 @@
 </head>
 
 <body>
-    <form runat="server">
+<form runat="server">
 
-        
-        <div class="navbar">
+<div class="navbar">
 
-            <div class="nav-left">
-                <asp:HyperLink ID="hlHome" runat="server" NavigateUrl="~/Home.aspx">Home</asp:HyperLink>
-                <asp:HyperLink ID="hlProducts" runat="server" NavigateUrl="~/Services.aspx">Products</asp:HyperLink>
-                <asp:HyperLink ID="hlCart" runat="server" NavigateUrl="~/Cart.aspx">Cart</asp:HyperLink>
+<div class="nav-left">
 
-                <asp:LinkButton
-                    ID="lnkAdmin"
-                    runat="server"
-                    PostBackUrl="~/Admin/ManageServices.aspx"
-                    Style="margin-left:15px;">
-                    Admin
-                </asp:LinkButton>
-            </div>
+<asp:HyperLink 
+ID="hlHome" 
+runat="server" 
+NavigateUrl="~/Home.aspx">
+Home
+</asp:HyperLink>
 
-            <div class="nav-right">
-                <asp:Label ID="lblUser" runat="server" Style="margin-right:15px;" />
+<asp:HyperLink 
+ID="hlProducts" 
+runat="server" 
+NavigateUrl="~/Services.aspx">
+Products
+</asp:HyperLink>
 
-                <asp:LinkButton
-                    ID="lnkLogin"
-                    runat="server"
-                    PostBackUrl="~/Login.aspx"
-                    CssClass="asp-linkbutton"
-                    Style="margin-right:10px;">
-                    Login
-                </asp:LinkButton>
+<asp:HyperLink 
+ID="hlCart" 
+runat="server" 
+NavigateUrl="~/Cart.aspx">
+Cart (<asp:Label ID="lblCartCount" runat="server" Text="0" />)
+</asp:HyperLink>
 
-                <asp:LinkButton
-                    ID="lnkSignup"
-                    runat="server"
-                    PostBackUrl="~/Register.aspx"
-                    CssClass="asp-linkbutton"
-                    Style="margin-right:10px;">
-                    Sign Up
-                </asp:LinkButton>
 
-                <asp:LinkButton
-                    ID="lnkLogout"
-                    runat="server"
-                    OnClick="lnkLogout_Click"
-                    CssClass="asp-linkbutton">
-                    Logout
-                </asp:LinkButton>
-            </div>
+<asp:LinkButton
+ID="lnkAdmin"
+runat="server"
+PostBackUrl="~/Admin/ManageServices.aspx"
+Style="margin-left:15px;">
+Admin
+</asp:LinkButton>
 
-        </div>
+</div>
 
-    
-        <div class="container">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-        </div>
 
-    </form>
+<div class="nav-right">
+
+<asp:Label 
+ID="lblUser" 
+runat="server" 
+Style="margin-right:15px;" />
+
+
+<asp:LinkButton
+ID="lnkLogin"
+runat="server"
+PostBackUrl="~/Login.aspx"
+CssClass="asp-linkbutton"
+Style="margin-right:10px;">
+Login
+</asp:LinkButton>
+
+
+<asp:LinkButton
+ID="lnkSignup"
+runat="server"
+PostBackUrl="~/Register.aspx"
+CssClass="asp-linkbutton"
+Style="margin-right:10px;">
+Sign Up
+</asp:LinkButton>
+
+
+<asp:LinkButton
+ID="lnkLogout"
+runat="server"
+OnClick="lnkLogout_Click"
+CssClass="asp-linkbutton">
+Logout
+</asp:LinkButton>
+
+</div>
+
+</div>
+
+
+<div class="container">
+<asp:ContentPlaceHolder ID="MainContent" runat="server" />
+</div>
+
+</form>
 </body>
 </html>
